@@ -1,0 +1,3 @@
+/home/huarz/桌面/lab2/testmuduo/build/CMakeFiles/server.dir
+/home/huarz/桌面/lab2/testmuduo/build/CMakeFiles/edit_cache.dir
+/home/huarz/桌面/lab2/testmuduo/build/CMakeFiles/rebuild_cache.dir
