@@ -4,9 +4,9 @@
 #include <muduo/net/TcpConnection.h>
 #include <unordered_map>
 #include <functional>
-#include "studentModel.hpp"
-#include "teacherModel.hpp"
-#include "adminModel.hpp"
+#include "model/studentModel.hpp"
+#include "model/teacherModel.hpp"
+#include "model/adminModel.hpp"
 #include <mutex>
 using namespace std;
 using namespace muduo;
@@ -43,6 +43,31 @@ public:
     void adminClientCloseException(const TcpConnectionPtr &conn);
     // 服务器异常，业务重置方法
     void reset();
+    
+    void stuQueryCourse(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    void stuQueryAllCourse(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    void stuQueryCourseChoosing(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    void stuQueryGrade(const TcpConnectionPtr &conn, json &js, Timestamp time);
+
+    void teaUpdateScore(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    void teaQueryCourseChoosing(const TcpConnectionPtr &conn, json &js, Timestamp time);
+
+    void adminInsertCourseChoosing(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    void adminQueryAllCourseChoosing(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    void adminRemoveCourseChoosing(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    void adminInsertCourse(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    void adminQueryCourse(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    void adminQueryAllCourse(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    void adminRemoveCourse(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    void adminQueryStudentGrades(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    void adminQueryAllStudentGrades(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    void adminQueryClassStudentsGrades(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    void adminQueryCoursesAverageScores(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    void adminQueryClassCoursesAverage(const TcpConnectionPtr &conn, json &js, Timestamp time);
+
+
+
+
     // 获取消息对应的处理器
     MsgHandler getHandler(int msgid);
     

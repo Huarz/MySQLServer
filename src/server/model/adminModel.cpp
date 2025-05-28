@@ -299,7 +299,7 @@ bool AdminModel::insertCourse(Course &course) {
     return false;
 }
 
-Course AdminModel::queryCourse(string &id) {
+Course AdminModel::queryCourse(const string &id) {
     char sql[1024] = {0};
     sprintf(sql, "SELECT * FROM Courses WHERE courseId = '%s'", id.c_str());
 
@@ -355,7 +355,7 @@ vector<Course> AdminModel::queryAllCourse() {
     return courses;
 }
 
-bool AdminModel::removeCourse(string& courseId) {
+bool AdminModel::removeCourse(const string& courseId) {
     char sql[1024] = {0};
     sprintf(sql, "DELETE FROM Courses WHERE courseId = '%s'", courseId.c_str());
 

@@ -20,9 +20,9 @@ public:
     vector<CourseChoosing> queryAllCouresChoosing();
     bool removeCourseChoosing(const string &studentID, const string &courseID);
     bool insertCourse(Course &_courese);
-    Course queryCourse(string &id);
+    Course queryCourse(const string &id);
     vector<Course> queryAllCourse();
-    bool removeCourse(string &id);
+    bool removeCourse(const string &id);
     vector<StudentGrade> queryStudentGrades(const string &studentID);
     vector<StudentGrade> queryAllStudentsGrades();
     vector<StudentGrade> queryClassStudentsGrades(const string& className);

@@ -30,7 +30,7 @@ bool StudentModel::insert(Student &stu)
     return false;
 }
 
-Student StudentModel::query(string id)
+Student StudentModel::query(string id)    
 {
     char sql[1024] = {0};
     sprintf(sql, "SELECT * FROM Students WHERE StudentID = %s", id.c_str());
