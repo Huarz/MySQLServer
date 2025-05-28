@@ -13,7 +13,7 @@
 					"jsonFile" : "directory-.-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.10"
+						"string" : "3.0"
 					},
 					"projectIndex" : 0,
 					"source" : "."
@@ -28,7 +28,7 @@
 					"jsonFile" : "directory-src-b6cf2213fc5053b67c22.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.10"
+						"string" : "3.0"
 					},
 					"parentIndex" : 0,
 					"projectIndex" : 0,
@@ -39,7 +39,7 @@
 					"jsonFile" : "directory-src.server-ed01e06ea8a73e000890.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.10"
+						"string" : "3.0"
 					},
 					"parentIndex" : 1,
 					"projectIndex" : 0,
@@ -54,7 +54,7 @@
 					"jsonFile" : "directory-src.client-1c4a3b19c39f3daa3331.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.10"
+						"string" : "3.0"
 					},
 					"parentIndex" : 1,
 					"projectIndex" : 0,
@@ -76,7 +76,7 @@
 						2,
 						3
 					],
-					"name" : "LAB2",
+					"name" : "chat",
 					"targetIndexes" : 
 					[
 						0,
@@ -89,14 +89,14 @@
 				{
 					"directoryIndex" : 3,
 					"id" : "SQLClient::@8ca63c80a879d0067daa",
-					"jsonFile" : "target-SQLClient-cbf53f36d0279ed8a2a9.json",
+					"jsonFile" : "target-SQLClient-d9b84afed3aa77660350.json",
 					"name" : "SQLClient",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "SQLServer::@2804e40980a64c7d7ad1",
-					"jsonFile" : "target-SQLServer-502817b30f743e1fa4ff.json",
+					"jsonFile" : "target-SQLServer-caafab0502e04fd36589.json",
 					"name" : "SQLServer",
 					"projectIndex" : 0
 				}

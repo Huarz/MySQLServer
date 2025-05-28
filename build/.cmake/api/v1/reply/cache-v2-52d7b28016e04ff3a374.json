@@ -851,7 +851,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "LAB2"
+			"value" : "chat"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1150,7 +1150,19 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "LAB2_BINARY_DIR",
+			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "linker supports push/pop state"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "TRUE"
+		},
+		{
+			"name" : "chat_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1162,7 +1174,7 @@
 			"value" : "/home/huarz/\u684c\u9762/lab2/MySQLServer/build"
 		},
 		{
-			"name" : "LAB2_IS_TOP_LEVEL",
+			"name" : "chat_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1174,7 +1186,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "LAB2_SOURCE_DIR",
+			"name" : "chat_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1184,18 +1196,6 @@
 			],
 			"type" : "STATIC",
 			"value" : "/home/huarz/\u684c\u9762/lab2/MySQLServer"
-		},
-		{
-			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "linker supports push/pop state"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
 		}
 	],
 	"kind" : "cache",

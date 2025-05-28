@@ -1,6 +1,5 @@
-cmake_minimum_required(VERSION 3.10)
-
-project(LAB2)
+cmake_minimum_required(VERSION 3.0)
+project(chat)
 
 # 配置编译选项
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -g)
@@ -14,9 +13,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include/server)
 include_directories(${PROJECT_SOURCE_DIR}/include/server/db)
 include_directories(${PROJECT_SOURCE_DIR}/include/server/model)
 include_directories(${PROJECT_SOURCE_DIR}/thirdparty)
-
-# link_directories(/usr/lib/mysql)
+link_directories(/usr/lib64/mysql)
 
 # 加载子目录
 add_subdirectory(src)
-
