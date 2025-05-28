@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/SQLClient.dir/main.cpp.o -o /home/huarz/桌面/lab2/MySQLServer/bin/SQLClient  -lpthread 

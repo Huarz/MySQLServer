@@ -8,7 +8,7 @@ using namespace std;
 class Teacher
 {
 private:
-    string teacherID;
+    string teacherId;
     string teacherName;
     string password;
     string state;
@@ -16,18 +16,18 @@ private:
 
 public:
     Teacher(string id = "", string name = "", string pwd = "", string _state = "offline")
-        : teacherID(id), teacherName(name), password(pwd), state(_state) {}
+        : teacherId(id), teacherName(name), password(pwd), state(_state) {}
 
     ~Teacher() {}
 
     // Getter 和 Setter 方法
-    string getTeacherID() const
+    string getTeacherId() const
     {
-        return teacherID;
+        return teacherId;
     }
-    void setTeacherID(string id)
+    void setTeacherId(string id)
     {
-        teacherID = id;
+        teacherId = id;
     }
 
     string getTeacherName() const

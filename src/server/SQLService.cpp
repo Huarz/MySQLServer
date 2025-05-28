@@ -120,7 +120,7 @@ void SQLService::teaLogin(const TcpConnectionPtr &conn, json &js, Timestamp time
     string id = js["id"];
     string pwd = js["password"];
     Teacher teacher = _teaModel.query(id);
-    if (teacher.getTeacherID() == id && teacher.getPassword() == pwd)
+    if (teacher.getTeacherId() == id && teacher.getPassword() == pwd)
     {
         if (teacher.getState() == "online")
         {
@@ -139,7 +139,7 @@ void SQLService::teaLogin(const TcpConnectionPtr &conn, json &js, Timestamp time
             json response;
             response["msgid"] = TEA_LOGIN_MSG_ACK;
             response["errno"] = 0;
-            response["teacherId"] = teacher.getTeacherID();
+            response["teacherId"] = teacher.getTeacherId();
             response["teacherName"] = teacher.getTeacherName();
             response["courseIds"] = teacher.getCourseIDs();
             teacher.setState("online");
@@ -172,7 +172,7 @@ void SQLService::teaReg(const TcpConnectionPtr &conn, json &js, Timestamp time)
         json response;
         response["msgid"] = TEA_REG_MSG_ACK;
         response["errno"] = 0;
-        response["id"] = teacher.getTeacherID();
+        response["id"] = teacher.getTeacherId();
         conn->send(response.dump());
     }
     else
@@ -280,7 +280,7 @@ void SQLService::teaClientCloseException(const TcpConnectionPtr &conn)
         {
             if (it->second == conn)
             {
-                tea.setTeacherID(it->first);
+                tea.setTeacherId(it->first);
                 _teaConnMap.erase(it);
                 break;
             }

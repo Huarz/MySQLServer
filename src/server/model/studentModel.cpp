@@ -140,3 +140,59 @@ CourseChoosing StudentModel::queryGrade(const Student&stu, const string& courseI
     }
     return CourseChoosing();
 }
+
+Course StudentModel::queryCourse(string &id) {
+    char sql[1024] = {0};
+    sprintf(sql, "SELECT * FROM Courses WHERE courseId = '%s'", id.c_str());
+
+    shared_ptr<Connection> conn = ConnectionPool::getConnectionPool()->getConnection();
+
+    if (conn != nullptr) {
+        MYSQL_RES *result = conn->query(sql);
+        if (result != nullptr) {
+            MYSQL_ROW row = mysql_fetch_row(result);
+            if (row != nullptr) {
+                Course course;
+                course.setCourseId(row[0]);
+                course.setCourseName(row[1]);
+                course.setTeacherId(row[2]);
+                course.setCredit(strtod(row[3], nullptr));
+                course.setGrade(atoi(row[4]));
+                course.setCanceledYear(atoi(row[5]));
+                mysql_free_result(result);
+                return course;
+            }
+        }
+    }
+
+    return Course();
+}
+vector<Course> StudentModel::queryAllCourse() {
+    vector<Course> courses;
+    const char* sql = "SELECT * FROM Courses";
+    
+    shared_ptr<Connection> conn = ConnectionPool::getConnectionPool()->getConnection();
+
+    if (conn != nullptr) {
+        MYSQL_RES* result = conn->query(sql);
+        if (result != nullptr) {
+            MYSQL_ROW row;
+            // 遍历结果集所有行
+            while ((row = mysql_fetch_row(result)) != nullptr) {
+                Course course;
+                // 处理可能为NULL的字段，设置默认值
+                course.setCourseId(row[0] ? row[0] : "");
+                course.setCourseName(row[1] ? row[1] : "");
+                course.setTeacherId(row[2] ? row[2] : "");
+                course.setCredit(row[3] ? strtod(row[3], nullptr) : 0.0);
+                course.setGrade(row[4] ? atoi(row[4]) : 0);
+                course.setCanceledYear(row[5] ? atoi(row[5]) : 0);
+                
+                courses.push_back(course);
+            }
+            mysql_free_result(result);
+        }
+    }
+    
+    return courses;
+}

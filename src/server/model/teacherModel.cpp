@@ -29,7 +29,7 @@ bool TeacherModel::insert(Teacher &teacher) {
 
     if (conn != nullptr) {
         if (conn->update(sql)) {
-            teacher.setTeacherID(to_string(mysql_insert_id(conn->getConnection())));
+            teacher.setTeacherId(to_string(mysql_insert_id(conn->getConnection())));
             return true;
         }
     }
@@ -38,7 +38,7 @@ bool TeacherModel::insert(Teacher &teacher) {
 
 Teacher TeacherModel::query(string teacherID) {
     char sql[1024] = {0};
-    sprintf(sql, "SELECT * FROM Teachers WHERE teacherID = '%s'", teacherID.c_str());
+    sprintf(sql, "SELECT * FROM Teachers WHERE teacherId = '%s'", teacherID.c_str());
 
     shared_ptr<Connection> conn = ConnectionPool::getConnectionPool()->getConnection();
 
@@ -48,7 +48,7 @@ Teacher TeacherModel::query(string teacherID) {
             MYSQL_ROW row = mysql_fetch_row(result);
             if (row != nullptr) {
                 Teacher teacher;
-                teacher.setTeacherID(row[0]);
+                teacher.setTeacherId(row[0]);
                 teacher.setTeacherName(row[1]);
                 teacher.setPassword(row[2]);
                 teacher.setState(row[3]);
@@ -75,7 +75,7 @@ bool TeacherModel::updateState(Teacher &teacher) {
     char sql[1024] = {0};
     sprintf(sql, "UPDATE Teachers SET state = '%s' WHERE teacherID = '%s'",
             teacher.getState().c_str(),
-            teacher.getTeacherID().c_str());
+            teacher.getTeacherId().c_str());
 
     shared_ptr<Connection> conn = ConnectionPool::getConnectionPool()->getConnection();
 
@@ -102,7 +102,7 @@ bool TeacherModel::updateScore(const Teacher &tea, const string &studentID,
                                      const string &courseID, double score) {
     char sql[1024] = {0};
     sprintf(sql, "UPDATE CourseChoosing SET score = %.2f WHERE studentID = '%s' AND courseID = '%s' AND teacherID = '%s'",
-            score, studentID.c_str(), courseID.c_str(), tea.getTeacherID().c_str());
+            score, studentID.c_str(), courseID.c_str(), tea.getTeacherId().c_str());
 
     shared_ptr<Connection> conn = ConnectionPool::getConnectionPool()->getConnection();
     return conn && conn->update(sql);
@@ -115,7 +115,7 @@ std::vector<CourseChoosing> TeacherModel::queryByTeacherAndCourse(
     char sql[1024] = {0};
     snprintf(sql, sizeof(sql), 
             "SELECT * FROM CourseChoosing WHERE teacherID = '%s' AND courseID = '%s'",
-            tea.getTeacherID().c_str(),
+            tea.getTeacherId().c_str(),
             courseID.c_str());
 
     std::shared_ptr<Connection> conn = ConnectionPool::getConnectionPool()->getConnection();

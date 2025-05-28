@@ -2,6 +2,7 @@
 #define STUDENTMODEL_H
 #include "student.hpp"
 #include "courseChoosing.hpp"
+#include "course.hpp"
 #include <vector>
 
 
@@ -14,6 +15,9 @@ public:
     // 更新学生信息
     bool updateState( Student &stu);
     void resetState();
+
+    Course queryCourse(string &id);
+    vector<Course> queryAllCourse();
     vector<CourseChoosing> queryByStudent(const Student &stu);
     CourseChoosing queryGrade(const Student&stu, const string& courseID);
 };

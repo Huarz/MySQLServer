@@ -1,0 +1,10 @@
+/home/huarz/桌面/lab2/MySQLServer/build/CMakeFiles/edit_cache.dir
+/home/huarz/桌面/lab2/MySQLServer/build/CMakeFiles/rebuild_cache.dir
+/home/huarz/桌面/lab2/MySQLServer/build/src/CMakeFiles/edit_cache.dir
+/home/huarz/桌面/lab2/MySQLServer/build/src/CMakeFiles/rebuild_cache.dir
+/home/huarz/桌面/lab2/MySQLServer/build/src/server/CMakeFiles/SQLServer.dir
+/home/huarz/桌面/lab2/MySQLServer/build/src/server/CMakeFiles/edit_cache.dir
+/home/huarz/桌面/lab2/MySQLServer/build/src/server/CMakeFiles/rebuild_cache.dir
+/home/huarz/桌面/lab2/MySQLServer/build/src/client/CMakeFiles/SQLClient.dir
+/home/huarz/桌面/lab2/MySQLServer/build/src/client/CMakeFiles/edit_cache.dir
+/home/huarz/桌面/lab2/MySQLServer/build/src/client/CMakeFiles/rebuild_cache.dir
