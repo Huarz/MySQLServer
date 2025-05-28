@@ -13,7 +13,7 @@ int main()
 {
     signal(SIGINT,resetHandler);
     EventLoop loop;
-    InetAddress addr("127.0.0.1", 8000);
+    InetAddress addr("127.0.0.1", 10000);
     SQLServer server(&loop, addr, "SQLServer");
     server.start();
     loop.loop();

@@ -9,7 +9,7 @@ ConnectionPool *ConnectionPool::getConnectionPool()
 
 bool ConnectionPool::loadConfigFile()
 {
-    FILE *pf = fopen("./mysql.conf", "r");
+    FILE *pf = fopen("mysql.conf", "r");
     if (pf == nullptr)
     {
         LOG_INFO << "mysql.conf file is not exsit!";
@@ -55,7 +55,7 @@ ConnectionPool::ConnectionPool()
 {
     if (!loadConfigFile())
     {
-        LOG_INFO << "mysql.init file error";
+        LOG_INFO << "mysql.conf file error";
     }
     for (int i = 0; i < _initSize; i++)
     {
