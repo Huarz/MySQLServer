@@ -1,6 +1,7 @@
 .
 ├── autobuild.sh
 ├── bin
+│   ├── mysql.conf
 │   ├── SQLClient
 │   └── SQLServer
 ├── build
@@ -78,10 +79,6 @@
 │           │       ├── model
 │           │       │   ├── adminModel.cpp.o
 │           │       │   ├── adminModel.cpp.o.d
-│           │       │   ├── courseChoosingModel.cpp.o
-│           │       │   ├── courseChoosingModel.cpp.o.d
-│           │       │   ├── courseModel.cpp.o
-│           │       │   ├── courseModel.cpp.o.d
 │           │       │   ├── studentModel.cpp.o
 │           │       │   ├── studentModel.cpp.o.d
 │           │       │   ├── teacherModel.cpp.o
@@ -99,21 +96,19 @@
 │   └── server
 │       ├── db
 │       │   ├── Connection.hpp
-│       │   ├── ConnectionPool.hpp
-│       │   └── mysql.cnf
+│       │   └── ConnectionPool.hpp
 │       ├── model
 │       │   ├── admin.hpp
 │       │   ├── adminModel.hpp
 │       │   ├── courseChoosing.hpp
-│       │   ├── courseChoosingModel.hpp
 │       │   ├── course.hpp
-│       │   ├── courseModel.hpp
 │       │   ├── student.hpp
 │       │   ├── studentModel.hpp
 │       │   ├── teacher.hpp
 │       │   └── teacherModel.hpp
 │       ├── SQLServer.hpp
 │       └── SQLService.hpp
+├── LICENSE
 ├── README.md
 ├── src
 │   ├── client
@@ -124,12 +119,11 @@
 │       ├── CMakeLists.txt
 │       ├── db
 │       │   ├── Conncetion.cpp
-│       │   └── ConnectionPool.cpp
+│       │   ├── ConnectionPool.cpp
+│       │   └── _mysql.conf
 │       ├── main.cpp
 │       ├── model
 │       │   ├── adminModel.cpp
-│       │   ├── courseChoosingModel.cpp
-│       │   ├── courseModel.cpp
 │       │   ├── studentModel.cpp
 │       │   └── teacherModel.cpp
 │       ├── SQLServer.cpp
@@ -188,4 +182,4 @@
 └── thirdparty
     └── json.hpp
 
-44 directories, 145 files
+44 directories, 139 files
