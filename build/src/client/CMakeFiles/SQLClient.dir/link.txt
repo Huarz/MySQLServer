@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -rdynamic CMakeFiles/SQLClient.dir/main.cpp.o -o /home/huarz/桌面/lab2/MySQLServer/bin/SQLClient   -L/usr/lib64/mysql  -Wl,-rpath,/usr/lib64/mysql -lpthread 
